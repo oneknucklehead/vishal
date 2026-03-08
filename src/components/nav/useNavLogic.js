@@ -8,6 +8,7 @@ const PAGE_TO_PATH = {
     about: "/about",
     careers: "/careers",
     contact: "/contact",
+    whatwedo: "/what-we-do"
 };
 
 export function useNavLogic(onClose) {

@@ -87,7 +87,7 @@ export function About() {
       </section>
 
       {/* ── Leadership ── */}
-      <section id="about-mission" className="border-b border-stone-200">
+      <section id="about-leadership" className="border-b border-stone-200">
         <div className="px-6 sm:px-10 lg:px-16 py-14 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-14 items-start max-w-7xl ">
           <Reveal>
             <Eyebrow>Our Leadership</Eyebrow>
@@ -104,7 +104,7 @@ export function About() {
       </section>
       {/* ── Our Culture ── */}
 
-      <section id="about-mission" className="border-b border-stone-200">
+      <section id="about-culture" className="border-b border-stone-200">
         <div className="px-6 sm:px-10 lg:px-16 py-14 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-14 items-start max-w-7xl ">
           <Reveal>
             <Eyebrow>Our Culture</Eyebrow>
@@ -153,7 +153,7 @@ export function About() {
       </section>
 
       {/* ── Values ── */}
-      <section id="about-values" className="border-b border-stone-200">
+      <section id="about-principles" className="border-b border-stone-200">
         <div className="px-6 sm:px-10 lg:px-16 py-14 max-w-7xl ">
           <Reveal>
             <Eyebrow>Core Principles</Eyebrow>

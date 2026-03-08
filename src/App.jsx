@@ -12,6 +12,7 @@ import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { About } from "./pages/About";
 import { Careers } from "./pages/Careers";
+import { WhatWeDo } from "./pages/WhatWeDo";
 
 const DESKTOP_BREAKPOINT = 1024;
 
@@ -40,6 +41,7 @@ export default function App() {
                   <Route path="/about" element={<About />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/what-we-do" element={<WhatWeDo />} />
                 </Routes>
                 <Footer />
               </motion.div>
@@ -64,6 +66,7 @@ export default function App() {
                   <Route path="/about" element={<About />} />
                   <Route path="/careers" element={<Careers />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/what-we-do" element={<WhatWeDo />} />
                 </Routes>
                 <Footer />
               </motion.div>

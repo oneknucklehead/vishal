@@ -124,14 +124,14 @@ export function Careers() {
 
       {/* ── Perks ── */}
       <section id="careers-perks" className="border-b border-stone-200">
-        <div className="px-6 sm:px-10 lg:px-16 max-w-3xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="px-6 sm:px-10 lg:px-16 max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {PERKS.map((p, i) => (
             <Reveal key={p.label} delay={i * 0.07}>
               <div
                 className={`py-8 ${i > 0 ? "sm:pl-5" : ""} ${i < 3 ? "lg:border-r border-stone-200" : ""}`}
               >
                 <Eyebrow>{p.label}</Eyebrow>
-                <p className="text-[13px] leading-relaxed text-stone-500 mt-2.5 font-light">
+                <p className="text-sm leading-relaxed text-stone-500 mt-2.5">
                   {p.body}
                 </p>
               </div>
@@ -141,7 +141,7 @@ export function Careers() {
       </section>
 
       {/* ── Job listings ── */}
-      <section id="careers-positions" className="max-w-3xl">
+      <section id="careers-positions" className="max-w-7xl">
         <div className="px-6 sm:px-10 lg:px-16 py-12">
           <Reveal>
             <h2 className="font-baskerville text-[clamp(22px,2.5vw,30px)] font-normal text-stone-800">
@@ -155,7 +155,7 @@ export function Careers() {
               <button
                 key={c}
                 onClick={() => setCat(c)}
-                className={`shrink-0 px-4 py-2.5 text-[11px] tracking-[0.13em] uppercase border-b-2 -mb-px transition-all duration-200 bg-transparent border-t-0 border-l-0 border-r-0 cursor-pointer font-jost ${
+                className={`shrink-0 px-4 py-2.5 text-sm tracking-[0.13em] uppercase border-b-2 -mb-px transition-all duration-200 bg-transparent border-t-0 border-l-0 border-r-0 cursor-pointer font-jost ${
                   cat === c
                     ? "text-stone-800 font-medium border-stone-800"
                     : "text-stone-400 font-light border-transparent hover:text-stone-600"
@@ -191,24 +191,38 @@ export function Careers() {
                       {job.title}
                     </div>
                     <div className="flex gap-2.5 mt-1 flex-wrap">
-                      <span className="text-[11px] text-stone-400 font-jost">
+                      <span className="text-sm text-stone-400 font-jost">
                         {job.dept}
                       </span>
                       <span className="text-stone-300">·</span>
-                      <span className="text-[11px] text-stone-400 font-jost">
+                      <span className="text-sm text-stone-400 font-jost">
                         {job.loc}
                       </span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
-                    <span className="text-[10px] tracking-[0.13em] uppercase text-stone-400 border border-stone-200 px-2 py-0.5 whitespace-nowrap font-jost">
+                    <span className="text-xs tracking-[0.13em] uppercase text-stone-400 border border-stone-200 px-2 py-0.5 whitespace-nowrap font-jost">
                       {job.level}
                     </span>
                     <motion.span
                       animate={{ x: hover === job.id ? 4 : 0 }}
                       className="text-stone-800 text-sm"
                     >
-                      →
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-move-right-icon lucide-move-right"
+                      >
+                        <path d="M18 8L22 12L18 16" />
+                        <path d="M2 12H22" />
+                      </svg>
                     </motion.span>
                   </div>
                 </motion.div>
@@ -226,12 +240,12 @@ export function Careers() {
                 <p className="font-baskerville text-[clamp(15px,1.6vw,18px)] text-stone-800">
                   Don't see your role?
                 </p>
-                <p className="text-[13px] text-stone-400 mt-1.5 font-light">
+                <p className="text-sm text-stone-400 mt-1.5">
                   Send us your résumé and we'll reach out when the right
                   opportunity arises.
                 </p>
               </div>
-              <button className="shrink-0 bg-stone-800 text-white text-[10px] tracking-[0.17em] uppercase font-medium px-6 py-2.5 border-none cursor-pointer transition-colors duration-200 hover:bg-stone-900 font-jost">
+              <button className="shrink-0 bg-stone-800 text-white text-xs tracking-[0.17em] uppercase font-medium px-6 py-2.5 border-none cursor-pointer transition-colors duration-200 hover:bg-stone-900 font-jost">
                 Speculative Application
               </button>
             </div>

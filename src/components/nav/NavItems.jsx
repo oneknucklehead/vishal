@@ -22,7 +22,7 @@ export function NavItems({ currentPage, openId, toggle, goTo, scrollTo }) {
                   goTo(sec.page);
                   if (hasSub) toggle(sec.id);
                 }}
-                className={`flex-1 text-left py-2 text-sm font-jost tracking-wide bg-transparent border-none cursor-pointer transition-colors duration-200 ${
+                className={`flex-1 text-left py-2 text-lg font-jost tracking-wide bg-transparent border-none cursor-pointer transition-colors duration-200 ${
                   isActive
                     ? "font-medium text-emerald-700"
                     : "font-light text-stone-800 hover:text-emerald-700"
@@ -41,7 +41,20 @@ export function NavItems({ currentPage, openId, toggle, goTo, scrollTo }) {
                     transition={{ duration: 0.22 }}
                     className="inline-block"
                   >
-                    ›
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-chevron-right-icon lucide-chevron-right"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
                   </motion.span>
                 </button>
               )}
@@ -60,7 +73,7 @@ export function NavItems({ currentPage, openId, toggle, goTo, scrollTo }) {
                     <button
                       key={s.label}
                       onClick={() => scrollTo(sec.page, s.sectionId)}
-                      className="block w-full text-left px-8 py-1.5 text-[12.5px] font-light font-jost text-stone-400 hover:text-stone-800 transition-colors duration-150 bg-transparent border-none cursor-pointer"
+                      className="block w-full text-left px-8 py-1.5 font-light font-jost text-stone-400 hover:text-stone-800 transition-colors duration-150 bg-transparent border-none cursor-pointer"
                     >
                       {s.label}
                     </button>

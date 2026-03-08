@@ -47,24 +47,24 @@ export function MobileNav() {
         {/* Animated hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer z-[60]"
+          className="flex flex-col gap-1.25 p-2 bg-transparent border-none cursor-pointer z-[60]"
         >
           <motion.span
             animate={open ? { rotate: 45, y: 6.5 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.28 }}
-            className="block w-[22px] h-[1.5px] bg-stone-800 origin-center"
+            className="block w-5.5 h-[1.5px] bg-stone-800 origin-center"
           />
           <motion.span
             animate={
               open ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }
             }
             transition={{ duration: 0.18 }}
-            className="block w-[22px] h-[1.5px] bg-stone-800"
+            className="block w-5.5 h-[1.5px] bg-stone-800"
           />
           <motion.span
             animate={open ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.28 }}
-            className="block w-[22px] h-[1.5px] bg-stone-800 origin-center"
+            className="block w-5.5 h-[1.5px] bg-stone-800 origin-center"
           />
         </button>
       </div>
@@ -79,7 +79,7 @@ export function MobileNav() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               onClick={close}
-              className="fixed inset-0 bg-stone-900/40 z-[49]"
+              className="fixed inset-0 bg-stone-900/40 z-49"
             />
             <motion.div
               initial={{ x: "100%" }}

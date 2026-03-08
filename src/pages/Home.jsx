@@ -111,9 +111,7 @@ export function Home() {
 
       {/* ── Intro ── */}
       <section id="home-investment" className="border-b py-16 border-stone-200">
-        <div
-        // className="max-w-7xl"
-        >
+        <div className="max-w-7xl">
           <div className="px-6 sm:px-10 lg:px-16 pb-16 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-10 md:gap-16 items-start">
             <Reveal>
               <Eyebrow>Our mission</Eyebrow>
