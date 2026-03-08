@@ -1,0 +1,45 @@
+export const NAV_SECTIONS = [
+    { id: "home", label: "Home", page: "home", sub: [] },
+    {
+        id: "about",
+        label: "Who We Are",
+        page: "about",
+        sub: [
+            { label: "Leadership", sectionId: "about-header" },
+            { label: "Our People", sectionId: "about-mission" },
+            { label: "Culture", sectionId: "about-values" },
+            { label: "Hear from Our People", sectionId: "about-values" },
+            { label: "Core Principles", sectionId: "about-values" },
+            { label: "Diversity", sectionId: "about-milestones" },
+            { label: "Community Impact", sectionId: "about-milestones" },
+            { label: "Sustainability", sectionId: "about-milestones" },
+        ],
+    },
+    {
+        id: "what",
+        label: "What We Do",
+        page: "home",
+        sub: [
+            { label: "Investment Management", sectionId: "home-disciplines" },
+            { label: "Technology", sectionId: "home-disciplines" },
+            { label: "Financial Research", sectionId: "home-disciplines" },
+            { label: "Financial Operations", sectionId: "home-disciplines" },
+        ],
+    },
+    {
+        id: "careers",
+        label: "How To Join",
+        page: "careers",
+        sub: [
+            { label: "Career Development", sectionId: "careers-header" },
+            { label: "Work with Us", sectionId: "careers-perks" },
+            { label: "Interviewing", sectionId: "careers-positions" },
+            { label: "Campus", sectionId: "careers-positions" },
+            { label: "Internships", sectionId: "careers-positions" },
+            { label: "Application FAQ", sectionId: "careers-open" },
+        ],
+    },
+    { id: "explore", label: "Explore", page: "home", sub: [] },
+    { id: "news", label: "News", page: "home", sub: [] },
+    { id: "contact", label: "Contact", page: "contact", sub: [] },
+];
