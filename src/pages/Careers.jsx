@@ -103,17 +103,17 @@ export function Careers() {
         id="careers-header"
         className="bg-stone-50 border-b border-stone-200"
       >
-        <div className="px-6 sm:px-10 lg:px-16 pt-16 pb-14 max-w-3xl">
+        <div className="px-6 sm:px-10 lg:px-16 pt-16 pb-14 max-w-7xl">
           <Reveal>
             <Eyebrow>How To Join</Eyebrow>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-baskerville text-[clamp(30px,4.5vw,60px)] font-normal text-stone-800 leading-[1.12] mt-4 tracking-tight max-w-lg">
+            <h1 className="font-baskerville text-[clamp(30px,4.5vw,60px)] font-normal text-stone-800 leading-[1.12] mt-4 tracking-tight max-w-5xl">
               Work at the edge of what's possible.
             </h1>
           </Reveal>
           <Reveal delay={0.18}>
-            <p className="text-[clamp(14px,1.5vw,15px)] leading-loose text-stone-400 max-w-sm mt-5 font-light">
+            <p className="text-[clamp(14px,1.6vw,16px)] leading-loose text-stone-400 max-w-md mt-5">
               We hire people who are relentlessly curious, technically
               exceptional, and excited to solve problems nobody has solved
               before.

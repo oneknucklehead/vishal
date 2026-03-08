@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Reveal } from "../components/Reveal";
 import { Eyebrow } from "../components/Eyebrow";
+import { ImageCarousel } from "../components/ImageCarousel";
 
 const VALUES = [
   {
@@ -71,28 +72,25 @@ export function About() {
             <Eyebrow>Who We Are</Eyebrow>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-baskerville text-[clamp(30px,4.5vw,60px)] font-normal text-stone-800 leading-[1.12] mt-4 tracking-tight max-w-xl">
+            <h1 className="font-baskerville text-[clamp(30px,4.5vw,60px)] font-normal text-stone-800 leading-[1.12] mt-4 tracking-tight max-w-5xl">
               Three decades of systematic excellence.
             </h1>
           </Reveal>
           <Reveal delay={0.18}>
-            <p className="text-[clamp(14px,1.5vw,15px)] leading-loose text-stone-400 max-w-md mt-5 font-light">
-              D.S. Capital applies the scientific method to the world's most
-              complex financial markets — with rigour, humility, and relentless
+            <p className="text-[clamp(14px,1.6vw,16px)] leading-loose text-stone-400 max-w-md mt-5 font-light">
+              Vishal applies the scientific method to the world's most complex
+              financial markets — with rigour, humility, and relentless
               curiosity.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* ── Mission ── */}
-      <section
-        id="about-mission"
-        className="max-w-3xl border-b border-stone-200"
-      >
-        <div className="px-6 sm:px-10 lg:px-16 py-14 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-14 items-start">
+      {/* ── Leadership ── */}
+      <section id="about-mission" className="border-b border-stone-200">
+        <div className="px-6 sm:px-10 lg:px-16 py-14 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-14 items-start max-w-7xl ">
           <Reveal>
-            <Eyebrow>Our Mission</Eyebrow>
+            <Eyebrow>Our Leadership</Eyebrow>
             <div className="w-6 h-px bg-stone-800 mt-3.5" />
           </Reveal>
           <Reveal delay={0.1}>
@@ -104,13 +102,59 @@ export function About() {
           </Reveal>
         </div>
       </section>
+      {/* ── Our Culture ── */}
+
+      <section id="about-mission" className="border-b border-stone-200">
+        <div className="px-6 sm:px-10 lg:px-16 py-14 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-14 items-start max-w-7xl ">
+          <Reveal>
+            <Eyebrow>Our Culture</Eyebrow>
+            <div className="w-6 h-px bg-stone-800 mt-3.5" />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="font-baskerville text-[clamp(16px,1.6vw,23px)] font-normal leading-relaxed text-stone-800">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p className="text-base text-stone-400 mt-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+          </Reveal>
+        </div>
+        <ImageCarousel
+          aspectRatio="4/3"
+          images={[
+            {
+              src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+              alt: "Team collaboration",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+              alt: "Office space",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+              alt: "Office space",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+              alt: "Office space",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+              alt: "Office space",
+            },
+          ]}
+        />
+      </section>
 
       {/* ── Values ── */}
-      <section
-        id="about-values"
-        className="max-w-3xl border-b border-stone-200"
-      >
-        <div className="px-6 sm:px-10 lg:px-16 py-14">
+      <section id="about-values" className="border-b border-stone-200">
+        <div className="px-6 sm:px-10 lg:px-16 py-14 max-w-7xl ">
           <Reveal>
             <Eyebrow>Core Principles</Eyebrow>
             <h2 className="font-baskerville text-[clamp(24px,2.5vw,32px)] font-normal text-stone-800 mt-3">
@@ -123,13 +167,13 @@ export function About() {
                 <motion.div
                   whileHover={{ backgroundColor: "#f5f5f4" }}
                   transition={{ duration: 0.2 }}
-                  className="p-7 bg-white"
+                  className="p-7 bg-white cursor-pointer"
                 >
                   <Eyebrow>{v.n}</Eyebrow>
-                  <h3 className="font-baskerville text-[17px] font-normal text-stone-800 mt-3 mb-2.5">
+                  <h3 className="font-baskerville text-lg font-normal text-stone-800 mt-3 mb-2.5">
                     {v.title}
                   </h3>
-                  <p className="text-[13px] leading-relaxed text-stone-400 font-light">
+                  <p className="text-base leading-relaxed text-stone-400">
                     {v.body}
                   </p>
                 </motion.div>
@@ -140,8 +184,8 @@ export function About() {
       </section>
 
       {/* ── Milestones ── */}
-      <section id="about-milestones" className="max-w-3xl">
-        <div className="px-6 sm:px-10 lg:px-16 py-14">
+      <section id="about-milestones" className="">
+        <div className="px-6 sm:px-10 lg:px-16 py-14 max-w-7xl">
           <Reveal>
             <Eyebrow>Our History</Eyebrow>
             <h2 className="font-baskerville text-[clamp(24px,2.5vw,32px)] font-normal text-stone-800 mt-3">
@@ -149,16 +193,16 @@ export function About() {
             </h2>
           </Reveal>
           <div className="mt-10 relative">
-            <div className="absolute left-[68px] top-0 bottom-0 w-px bg-stone-200" />
+            <div className="absolute left-17 top-0 bottom-0 w-px bg-stone-200" />
             {MILESTONES.map((m, i) => (
               <Reveal key={m.year} delay={i * 0.08} y={16}>
                 <div className="flex mb-8">
-                  <div className="w-[68px] shrink-0 font-baskerville text-sm text-stone-400 pt-0.5">
+                  <div className="w-17 shrink-0 font-baskerville text-base text-stone-400">
                     {m.year}
                   </div>
                   <div className="pl-8 relative">
-                    <div className="absolute -left-[4.5px] top-[7px] w-2 h-2 rounded-full bg-white border-[1.5px] border-stone-800" />
-                    <p className="text-sm leading-relaxed text-stone-500 font-light">
+                    <div className="absolute -left-[4.5px] top-1.75 w-2 h-2 rounded-full bg-white border-[1.5px] border-stone-800" />
+                    <p className="text-base leading-relaxed text-stone-500">
                       {m.text}
                     </p>
                   </div>

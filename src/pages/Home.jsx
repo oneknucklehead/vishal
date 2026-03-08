@@ -44,7 +44,7 @@ export function Home() {
       >
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_70%_at_60%_50%,#f5f5f4,transparent_70%)]" />
         <div className="absolute right-[4%] bottom-[4%] font-baskerville text-[clamp(80px,14vw,220px)] font-bold text-stone-200 select-none pointer-events-none leading-none tracking-tighter">
-          DS
+          VISHAL
         </div>
         <div className="relative z-10 w-full max-w-5xl px-6 sm:px-10 lg:px-16 py-20">
           <motion.div

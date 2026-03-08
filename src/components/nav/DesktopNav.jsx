@@ -7,9 +7,9 @@ export function DesktopNav() {
   return (
     <>
       {/* Left brand strip */}
-      <div className="fixed left-0 top-0 bottom-0 w-7 z-40 flex items-center justify-center border-r border-stone-200 bg-white">
-        <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] tracking-[0.22em] uppercase text-stone-400 font-normal select-none font-jost">
-          D.S. Capital &amp; Co
+      <div className="fixed left-0 top-0 bottom-0 w-fit px-2 z-40 flex items-center justify-center border-r border-stone-200 bg-white">
+        <span className="[writing-mode:vertical-rl] rotate-180 text-xs tracking-[0.22em] uppercase text-stone-400 font-normal select-none font-jost">
+          Vishal company
         </span>
       </div>
 
