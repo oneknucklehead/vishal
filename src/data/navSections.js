@@ -29,10 +29,8 @@ export const NAV_SECTIONS = [
         page: "careers",
         sub: [
             { label: "Career Development", sectionId: "careers-header" },
-            { label: "Work with Us", sectionId: "careers-perks" },
-            { label: "Interviewing", sectionId: "careers-positions" },
-            { label: "Campus", sectionId: "careers-positions" },
-            { label: "Internships", sectionId: "careers-positions" },
+            { label: "Work with Us", sectionId: "careers-positions" },
+
             { label: "Application FAQ", sectionId: "careers-open" },
         ],
     },
