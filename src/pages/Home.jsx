@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Reveal } from "../components/Reveal";
 import { Eyebrow } from "../components/Eyebrow";
 import { Carousel } from "../components/Carousel";
+import { useEffect } from "react";
 const STATS = [
   { n: "30+", l: "Years of Excellence" },
   { n: "₹2T+", l: "Assets Under Management" },
@@ -35,6 +36,96 @@ const DISCIPLINES = [
 
 export function Home() {
   const navigate = useNavigate();
+  useEffect(() => {
+    const canvas = document.getElementById("hero-canvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let W, H, animId;
+    let mouse = { x: -9999, y: -9999 };
+    const GRID = 60;
+
+    function resize() {
+      const section = document.getElementById("home-hero");
+      W = canvas.width = section.offsetWidth;
+      H = canvas.height = section.offsetHeight;
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      const cols = Math.ceil(W / GRID);
+      const rows = Math.ceil(H / GRID);
+      const mouseCol = Math.floor(mouse.x / GRID);
+      const mouseRow = Math.floor(mouse.y / GRID);
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const dc = col - mouseCol;
+          const dr = row - mouseRow;
+          const dist = Math.sqrt(dc * dc + dr * dr);
+          const maxDist = 1;
+
+          if (dist < maxDist) {
+            const intensity = (1 - dist / maxDist) * 0.05;
+            ctx.fillStyle = `rgba(68,65,60,${intensity})`;
+            ctx.fillRect(
+              col * GRID + 0.5,
+              row * GRID + 0.5,
+              GRID - 1,
+              GRID - 1,
+            );
+          }
+        }
+      }
+
+      // Grid lines
+      ctx.strokeStyle = "rgba(120,113,108,0.2)";
+      ctx.lineWidth = 0.5;
+      for (let x = 0; x <= W; x += GRID) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, H);
+        ctx.stroke();
+      }
+      for (let y = 0; y <= H; y += GRID) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(W, y);
+        ctx.stroke();
+      }
+    }
+
+    function loop() {
+      draw();
+      animId = requestAnimationFrame(loop);
+    }
+
+    function onMouseMove(e) {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    }
+
+    function onMouseLeave() {
+      mouse.x = -9999;
+      mouse.y = -9999;
+    }
+
+    resize();
+    loop();
+
+    const section = document.getElementById("home-hero");
+    section.addEventListener("mousemove", onMouseMove);
+    section.addEventListener("mouseleave", onMouseLeave);
+    window.addEventListener("resize", resize);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      section.removeEventListener("mousemove", onMouseMove);
+      section.removeEventListener("mouseleave", onMouseLeave);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
   return (
     <div className="bg-white">
       {/* ── Hero ── */}
@@ -42,9 +133,22 @@ export function Home() {
         id="home-hero"
         className="relative min-h-[88vh] flex items-center border-b border-stone-200 overflow-hidden bg-white"
       >
+        <canvas
+          id="hero-canvas"
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{ opacity: 0.6 }}
+        />
+
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_70%_at_60%_50%,#f5f5f4,transparent_70%)]" />
-        <div className="absolute right-[4%] bottom-[4%] font-baskerville text-[clamp(80px,14vw,220px)] font-bold text-stone-200 select-none pointer-events-none leading-none tracking-tighter">
-          VISHAL
+        <div
+          className="absolute right-[3%] bottom-[3%] font-baskerville font-bold text-stone-200 select-none pointer-events-none leading-none tracking-tighter text-right"
+          style={{
+            fontSize: "clamp(32px, 5vw, 90px)",
+            maxWidth: "90vw",
+            wordBreak: "break-word",
+          }}
+        >
+          P.K. Sah & Associates
         </div>
         <div className="relative z-10 w-full max-w-5xl px-6 sm:px-10 lg:px-16 py-20">
           <motion.div
@@ -86,6 +190,7 @@ export function Home() {
         <div className="px-6 sm:px-10 lg:px-16 grid grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, i) => (
             <div
+              key={i}
               className={`border-stone-200
             ${i === 0 || i === 2 ? "border-r" : "border-r-0"}
             ${i < 3 ? "lg:border-r" : "lg:border-r-0"}
@@ -145,10 +250,10 @@ export function Home() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-move-right-icon lucide-move-right"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-move-right-icon lucide-move-right"
                   >
                     <path d="M18 8L22 12L18 16" />
                     <path d="M2 12H22" />
@@ -190,10 +295,10 @@ export function Home() {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-move-right-icon lucide-move-right"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-move-right-icon lucide-move-right"
                   >
                     <path d="M18 8L22 12L18 16" />
                     <path d="M2 12H22" />
@@ -321,7 +426,7 @@ export function Home() {
 
       {/* ── CTA ── */}
       <section className="bg-stone-800">
-        <div className="px-6 sm:px-10 lg:px-16 py-14 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div className="px-6 sm:px-10 lg:px-16 py-14 flex flex-wrap flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
           <Reveal>
             <h2 className="font-baskerville text-[clamp(18px,2.2vw,30px)] font-normal text-white">
               Ready to do the most interesting work of your career?

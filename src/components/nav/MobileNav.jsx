@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavItems } from "./NavItems";
 import { useNavLogic } from "./useNavLogic";
+import logo from "../../assets/logo.png";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ export function MobileNav() {
   return (
     <>
       {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-14 bg-white border-b border-stone-200 flex items-center justify-between px-5">
+      <div className="fixed top-0 left-0 right-0 z-50 h-fit py-3 bg-white border-b border-stone-200 flex items-center justify-between px-5">
         <button
           onClick={() => {
             navigate("/");
@@ -36,35 +37,36 @@ export function MobileNav() {
           }}
           className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer p-0"
         >
-          <div className="w-7 h-7 bg-stone-800 flex items-center justify-center text-[10px] font-bold text-white tracking-wider font-jost">
+          {/* <div className="w-7 h-7 bg-stone-800 flex items-center justify-center text-[10px] font-bold text-white tracking-wider font-jost">
             DS
           </div>
           <span className="font-baskerville text-sm text-stone-800">
             D.S. Capital
-          </span>
+          </span> */}
+          <img src={logo} alt="brand logo" className="max-w-36 object-cover" />
         </button>
 
         {/* Animated hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-col gap-1.25 p-2 bg-transparent border-none cursor-pointer z-[60]"
+          className="flex flex-col gap-1.25 p-2 bg-transparent border-none cursor-pointer z-60"
         >
           <motion.span
             animate={open ? { rotate: 45, y: 6.5 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.28 }}
-            className="block w-5.5 h-[1.5px] bg-stone-800 origin-center"
+            className="block w-5.5 h-0.5 bg-stone-800 origin-center"
           />
           <motion.span
             animate={
               open ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }
             }
             transition={{ duration: 0.18 }}
-            className="block w-5.5 h-[1.5px] bg-stone-800"
+            className="block w-5.5 h-0.5 bg-stone-800"
           />
           <motion.span
             animate={open ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.28 }}
-            className="block w-5.5 h-[1.5px] bg-stone-800 origin-center"
+            className="block w-5.5 h-0.5 bg-stone-800 origin-center"
           />
         </button>
       </div>

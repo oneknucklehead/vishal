@@ -31,7 +31,9 @@ export function Footer() {
       <div className="px-6 sm:px-10 lg:px-16 pt-12 pb-8 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_repeat(3,auto)] gap-8 lg:gap-16 mb-11">
           <div>
-            <div className="font-baskerville text-lg text-white">Vishal</div>
+            <div className="font-baskerville text-lg text-white">
+              P. K. Sah & Associates
+            </div>
             <p className="text-sm leading-relaxed text-white/30 mt-2.5 max-w-55 font-light">
               Global leader in systematic investment management.
             </p>

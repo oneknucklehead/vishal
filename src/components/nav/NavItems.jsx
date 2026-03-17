@@ -48,10 +48,10 @@ export function NavItems({ currentPage, openId, toggle, goTo, scrollTo }) {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-chevron-right-icon lucide-chevron-right"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-chevron-right-icon lucide-chevron-right"
                     >
                       <path d="m9 18 6-6-6-6" />
                     </svg>

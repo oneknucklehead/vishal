@@ -1,6 +1,6 @@
 import { NavItems } from "./NavItems";
 import { useNavLogic } from "./useNavLogic";
-
+import logo from "../../assets/logo.png";
 export function DesktopNav() {
   const { currentPage, openId, toggle, goTo, scrollTo } = useNavLogic();
 
@@ -8,8 +8,9 @@ export function DesktopNav() {
     <>
       {/* Left brand strip */}
       <div className="fixed left-0 top-0 bottom-0 w-fit px-2 z-40 flex items-center justify-center border-r border-stone-200 bg-white">
-        <span className="[writing-mode:vertical-rl] rotate-180 text-xs tracking-[0.22em] uppercase text-stone-400 font-normal select-none font-jost">
-          Vishal company
+        <span className="[writing-mode:vertical-rl] rotate-180 text-sm tracking-[0.22em] uppercase text-stone-400 font-bold select-none font-jost">
+          P.K. Sah & Associates
+          {/* <img src={logo} alt="brand logo" className="-rotate-90 object-cover" /> */}
         </span>
       </div>
 

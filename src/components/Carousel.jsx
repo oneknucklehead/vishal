@@ -81,7 +81,7 @@ function Card({ item }) {
       <div className="flex flex-col flex-1 p-5 sm:p-6">
         {item.eyebrow && (
           <Eyebrow>
-            <div className="mb-2">{item.eyebrow}</div>
+            <span className="mb-2">{item.eyebrow}</span>
           </Eyebrow>
         )}
 
@@ -107,10 +107,10 @@ function Card({ item }) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-move-right-icon lucide-move-right"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-move-right-icon lucide-move-right"
             >
               <path d="M18 8L22 12L18 16" />
               <path d="M2 12H22" />
@@ -227,8 +227,8 @@ export function Carousel({
                 onClick={() => go(i)}
                 className={`block border-none cursor-pointer transition-all duration-300 p-0 ${
                   i === index
-                    ? "w-5 h-[3px] bg-stone-800"
-                    : "w-[3px] h-[3px] rounded-full bg-stone-300 hover:bg-stone-500"
+                    ? "w-5 h-0.75 bg-stone-800"
+                    : "w-0.75 h-0.75 rounded-full bg-stone-300 hover:bg-stone-500"
                 }`}
               />
             ))}
