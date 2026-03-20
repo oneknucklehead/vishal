@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useWindowWidth } from "../hooks/useWindowWidth";
-import { Eyebrow } from "./Eyebrow";
 
 /**
  * Carousel — D.S. Capital theme, multi-card sliding track
@@ -54,8 +53,19 @@ function Card({ item }) {
   const [imgHover, setImgHover] = useState(false);
 
   const handleLink = () => {
-    navigate(item.linkTo ?? "/");
-    window.scrollTo(0, 0);
+    const raw = item.linkTo ?? "/";
+    const hashIdx = raw.indexOf("#");
+    if (hashIdx !== -1) {
+      // Pass the target section as a query param so the destination page
+      // can read it on mount — avoids racing against AnimatePresence exit.
+      const path = raw.slice(0, hashIdx);
+      const sectionId = raw.slice(hashIdx + 1);
+      navigate(`${path}?section=${sectionId}`);
+      window.scrollTo(0, 0);
+    } else {
+      navigate(raw);
+      window.scrollTo(0, 0);
+    }
   };
 
   return (
@@ -80,16 +90,16 @@ function Card({ item }) {
       {/* Body */}
       <div className="flex flex-col flex-1 p-5 sm:p-6">
         {item.eyebrow && (
-          <Eyebrow>
-            <span className="mb-2">{item.eyebrow}</span>
-          </Eyebrow>
+          <p className="text-[10px] tracking-[0.26em] uppercase font-medium font-jost text-stone-400 mb-3">
+            {item.eyebrow}
+          </p>
         )}
 
         <h3 className="font-baskerville text-[clamp(16px,1.5vw,19px)] font-normal text-stone-800 leading-snug mb-3">
           {item.title}
         </h3>
 
-        <p className="font-jost text-sm leading-normal text-stone-400 font-light flex-1 mb-5">
+        <p className="font-jost text-[clamp(14px,1.6vw,16px)] leading-loose text-stone-400 font-light flex-1 mb-5">
           {item.description}
         </p>
 
@@ -98,19 +108,19 @@ function Card({ item }) {
           onClick={handleLink}
           className="self-start flex items-center gap-2 bg-transparent border-none border-b border-stone-800 pb-px p-0 cursor-pointer font-jost text-[11px] tracking-[0.14em] uppercase font-medium text-stone-800 transition-all duration-200 hover:gap-3.5"
         >
-          {item.linkLabel ?? "Learn More"}{" "}
+          {item.linkLabel ?? "Learn More"}
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-move-right-icon lucide-move-right"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-move-right-icon lucide-move-right"
             >
               <path d="M18 8L22 12L18 16" />
               <path d="M2 12H22" />
@@ -125,6 +135,7 @@ function Card({ item }) {
 // ─── Carousel ─────────────────────────────────────────────────────────────────
 export function Carousel({
   title,
+  descriptionHeading,
   description,
   items = [],
   autoPlay = false,
@@ -192,16 +203,21 @@ export function Carousel({
     // className="max-w-7xl"
     >
       {/* ── Section header ── */}
-      <div className="px-6 sm:px-10 lg:px-16 pt-14 pb-10 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-16 items-start">
+      <div className="px-6 sm:px-10 lg:px-16 pt-14 pb-10 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-8 md:gap-16 items-start border-b border-stone-200">
         <div>
           <p className="text-[10px] tracking-[0.26em] uppercase font-medium font-jost text-stone-400">
             {title}
           </p>
           <div className="w-6 h-px bg-stone-800 mt-3.5" />
         </div>
-        <p className="font-baskerville text-[clamp(15px,1.6vw,20px)] font-normal leading-relaxed text-stone-800">
-          {description}
-        </p>
+        <div>
+          <p className="font-baskerville text-[clamp(15px,1.6vw,20px)] font-normal leading-relaxed text-stone-800 mb-4">
+            {descriptionHeading}
+          </p>
+          <p className="font-jost text-[clamp(14px,1.6vw,16px)] font-light leading-loose text-stone-400">
+            {description}
+          </p>
+        </div>
       </div>
 
       {/* ── Track ── */}
@@ -227,8 +243,8 @@ export function Carousel({
                 onClick={() => go(i)}
                 className={`block border-none cursor-pointer transition-all duration-300 p-0 ${
                   i === index
-                    ? "w-5 h-0.75 bg-stone-800"
-                    : "w-0.75 h-0.75 rounded-full bg-stone-300 hover:bg-stone-500"
+                    ? "w-5 h-[3px] bg-stone-800"
+                    : "w-[3px] h-[3px] rounded-full bg-stone-300 hover:bg-stone-500"
                 }`}
               />
             ))}

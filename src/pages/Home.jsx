@@ -4,11 +4,12 @@ import { Reveal } from "../components/Reveal";
 import { Eyebrow } from "../components/Eyebrow";
 import { Carousel } from "../components/Carousel";
 import { useEffect } from "react";
+import { HomeMissionSection } from "../components/Homesection";
 const STATS = [
-  { n: "30+", l: "Years of Excellence" },
-  { n: "₹2T+", l: "Assets Under Management" },
-  { n: "2,000+", l: "Professionals Globally" },
-  { n: "6", l: "Continents" },
+  { n: "5+", l: "Cities Across India" },
+  { n: "1100+", l: "Team of Professionals" },
+  { n: "5+", l: "Offices Across India" },
+  { n: "10+", l: "Industries" },
 ];
 
 const DISCIPLINES = [
@@ -215,214 +216,73 @@ export function Home() {
       </section>
 
       {/* ── Intro ── */}
-      <section id="home-investment" className="border-b py-16 border-stone-200">
-        <div className="max-w-7xl">
-          <div className="px-6 sm:px-10 lg:px-16 pb-16 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-10 md:gap-16 items-start">
-            <Reveal>
-              <Eyebrow>Our mission</Eyebrow>
-              <div className="w-7 h-px bg-stone-800 mt-4" />
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="font-baskerville text-[clamp(16px,1.6vw,23px)] font-normal leading-relaxed text-stone-800">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p className="text-base text-stone-400 mt-4 font-light">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
-              </p>
-              <Link
-                to={"/about"}
-                className="mt-6 bg-transparent border-none border-b border-stone-800 pb-0.5 text-[11px] tracking-[0.14em] uppercase font-medium text-stone-800 inline-flex items-center gap-2 cursor-pointer transition-all duration-200 hover:gap-3.5"
-              >
-                Learn More{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-move-right-icon lucide-move-right"
-                  >
-                    <path d="M18 8L22 12L18 16" />
-                    <path d="M2 12H22" />
-                  </svg>
-                </span>
-              </Link>
-            </Reveal>
-          </div>
-          <div className="px-6 sm:px-10 lg:px-16 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-10 md:gap-16 items-start">
-            <Reveal>
-              <Eyebrow>Our vision</Eyebrow>
-              <div className="w-7 h-px bg-stone-800 mt-4" />
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="font-baskerville text-[clamp(16px,1.6vw,23px)] font-normal leading-relaxed text-stone-800">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p className="text-base text-stone-400 mt-4 font-light">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
-              </p>
-              <Link
-                to={"/about"}
-                className="mt-6 bg-transparent border-none border-b border-stone-800 pb-0.5 text-[11px] tracking-[0.14em] uppercase font-medium text-stone-800 inline-flex items-center gap-2 cursor-pointer transition-all duration-200 hover:gap-3.5"
-              >
-                Learn More{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-move-right-icon lucide-move-right"
-                  >
-                    <path d="M18 8L22 12L18 16" />
-                    <path d="M2 12H22" />
-                  </svg>
-                </span>
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      <HomeMissionSection />
 
       {/* ── Carousel ── */}
       <section>
         <Carousel
           title="What We Do"
-          description="Explore the disciplines that define our work across research, technology, and operations."
+          descriptionHeading="Wider Choice, Seamless Delivery."
+          description="At DHC, we believe there's a thin line between 'delivering a service' and 'delivering value'.
+As the global business realities change, corporations are finding ways to adapt to the new working world. We at DHC, are focused on providing our clients with future-proof solutions to achieve a seamless adaptation to the changes in their individual industries. With a focus on quality, we provide accounting and consultancy services in assurance, risk advisory, tax and regulatory, corporate finance advisory and global knowledge services."
           items={[
             {
               image:
                 "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800",
-              eyebrow: "Research",
-              title: "Quantitative Strategies",
+              title: "Tax & Regulatory Services",
               description:
-                "Proprietary models and data science driving systematic strategies across global markets.",
-              linkTo: "/",
+                "Proactive, data-driven tax strategies designed to navigate evolving global regulations, ensuring structural efficiency and long-term financial resilience.",
+              linkTo: "/what-we-do#whatwedo-tax",
               linkLabel: "Learn More",
             },
             {
               image:
                 "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-              eyebrow: "Engineering",
-              title: "Technology & Infrastructure",
+              // eyebrow: "Engineering",
+              title: "Corporate Finance Advisory Services",
               description:
-                "High-performance systems built for the most demanding computational workloads.",
-              linkTo: "/",
+                "Strategic financial guidance for complex transactions, from capital raising to cross-border M&A, delivered with deep industry expertise and a global perspective.",
+              linkTo: "/what-we-do#whatwedo-corporate",
             },
             {
               image:
                 "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-              eyebrow: "Finance",
-              title: "Risk Intelligence",
+              // eyebrow: "Finance",
+              title: "Risk & Advisory Services",
               description:
-                "Rigorous risk architecture refined over three decades of navigating complex markets.",
-              linkTo: "/",
+                "Comprehensive risk management frameworks and strategic assurance services designed to identify vulnerabilities and build long-term business resilience.",
+              linkTo: "/what-we-do#whatwedo-risk",
             },
             {
               image:
                 "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
-              eyebrow: "Operations",
-              title: "Financial Operations",
+              // eyebrow: "Operations",
+              title: "Assurance Services",
               description:
-                "Disciplined frameworks ensuring precision and resilience across every function.",
-              linkTo: "/careers",
+                "Leveraging seven decades of experience to provide credible financial reporting and global assurance solutions that meet the highest standards of stakeholder transparency.",
+              linkTo: "/what-we-do#whatwedo-assurance",
             },
             {
               image:
                 "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
-              eyebrow: "Operations",
-              title: "Financial Operations",
+              // eyebrow: "Operations",
+              title: "Global Knowledge Services",
               description:
-                "Disciplined frameworks ensuring precision and resilience across every function.",
-              linkTo: "/careers",
+                "Strategic outsourcing and Virtual CFO solutions that streamline non-core functions, allowing businesses to focus on growth while driving day-to-day operational efficiencies.",
+              linkTo: "/what-we-do#whatwedo-gks",
             },
             {
               image:
                 "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
-              eyebrow: "Operations",
-              title: "Financial Operations",
+              // eyebrow: "Operations",
+              title: "ESG Advisory Services",
               description:
-                "Disciplined frameworks ensuring precision and resilience across every function.",
-              linkTo: "/careers",
-            },
-            {
-              image:
-                "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
-              eyebrow: "Operations",
-              title: "Financial Operations",
-              description:
-                "Disciplined frameworks ensuring precision and resilience across every function.",
-              linkTo: "/careers",
-            },
-            {
-              image:
-                "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
-              eyebrow: "Operations",
-              title: "Financial Operations",
-              description:
-                "Disciplined frameworks ensuring precision and resilience across every function.",
-              linkTo: "/careers",
+                "Strategic guidance on sustainability metrics and ethical operations, helping organizations balance short-term regulatory compliance with long-term stakeholder value.",
+              linkTo: "/what-we-do#whatwedo-esg",
             },
           ]}
         />
       </section>
-
-      {/* ── Disciplines ── */}
-      {/* <section
-        id="home-disciplines"
-        // className="max-w-5xl"
-      >
-        <div className="px-6 sm:px-10 lg:px-16 py-14">
-          <Reveal>
-            <Eyebrow>What We Do</Eyebrow>
-            <h2 className="font-baskerville text-[clamp(22px,2.4vw,34px)] font-normal text-stone-800 mt-3 max-w-xs leading-snug">
-              Our Core Disciplines
-            </h2>
-          </Reveal>
-          <div className="mt-10">
-            {DISCIPLINES.map((d, i) => (
-              <Reveal key={d.num} delay={i * 0.07}>
-                <div className="grid grid-cols-1 sm:grid-cols-[48px_1fr] lg:grid-cols-[48px_1fr_1.6fr] gap-2 border-t border-stone-200 py-6 items-start">
-                  <Eyebrow>{d.num}</Eyebrow>
-                  <h3 className="font-baskerville text-[clamp(15px,1.4vw,17px)] font-normal text-stone-800">
-                    {d.title}
-                  </h3>
-                  <p className="text-[13.5px] leading-relaxed text-stone-400">
-                    {d.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-            <div className="border-t border-stone-200" />
-          </div>
-        </div>
-      </section> */}
 
       {/* ── CTA ── */}
       <section className="bg-stone-800">

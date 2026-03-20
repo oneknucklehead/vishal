@@ -73,7 +73,7 @@ export function NavItems({ currentPage, openId, toggle, goTo, scrollTo }) {
                     <button
                       key={s.label}
                       onClick={() => scrollTo(sec.page, s.sectionId)}
-                      className="block w-full text-left px-8 py-1.5 font-light font-jost text-stone-400 hover:text-stone-800 transition-colors duration-150 bg-transparent border-none cursor-pointer"
+                      className="block text-sm w-full text-left px-8 py-1.5 font-light font-jost text-stone-400 hover:text-stone-800 transition-colors duration-150 bg-transparent border-none cursor-pointer"
                     >
                       {s.label}
                     </button>

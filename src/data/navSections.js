@@ -17,10 +17,12 @@ export const NAV_SECTIONS = [
         label: "What We Do",
         page: "whatwedo",
         sub: [
-            { label: "Investment Management", sectionId: "whatwedo-investment" },
-            { label: "Technology", sectionId: "whatwedo-technology" },
-            { label: "Financial Research", sectionId: "whatwedo-research" },
-            { label: "Financial Operations", sectionId: "whatwedo-operations" },
+            { label: "Tax & Regulatory Services", sectionId: "whatwedo-tax" },
+            { label: "Corporate Finance Advisory Services", sectionId: "whatwedo-corporate" },
+            { label: "Risk & Advisory Services", sectionId: "whatwedo-risk" },
+            { label: "Assurance Services", sectionId: "whatwedo-assurance" },
+            { label: "Global Knowledge Services", sectionId: "whatwedo-gks" },
+            { label: "ESG Advisory Services", sectionId: "whatwedo-esg" },
         ],
     },
     {

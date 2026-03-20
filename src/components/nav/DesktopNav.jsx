@@ -15,7 +15,7 @@ export function DesktopNav() {
       </div>
 
       {/* Right nav panel */}
-      <div className="fixed top-0 right-0 bottom-0 w-fit min-w-55 bg-white border-l border-stone-200 z-40 overflow-y-auto flex flex-col pt-12 pb-8">
+      <div className="fixed top-0 right-0 bottom-0 w-full max-w-55 bg-white border-l border-stone-200 z-40 overflow-y-auto flex flex-col pt-12 pb-8">
         <NavItems
           currentPage={currentPage}
           openId={openId}
